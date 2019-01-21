@@ -1,18 +1,29 @@
 package com.example.android.quraanplayapp;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.ImageView;
+public class Suraa {
+    private String mName, mPlace;
+    private int mPage, mNumberOfVerses;
 
-public class Suraa extends AppCompatActivity {
+    public Suraa(String name, String place, int page, int numberOfVerses){
+        mName = name;
+        mPage = page;
+        mNumberOfVerses = numberOfVerses;
+        mPlace = place;
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suraa);
+    public String getName() {
+        return mName;
+    }
 
-        int imageInt = getIntent().getIntExtra("Image Int",0); // oops should be a fallback if an error happens
-        ImageView imageView = findViewById(R.id.main_image_suraa);
-        imageView.setImageResource(imageInt);
+    public int getNumberOfVerses() {
+        return mNumberOfVerses;
+    }
+
+    public int getPage() {
+        return mPage;
+    }
+
+    public String getPlace() {
+        return mPlace;
     }
 }
