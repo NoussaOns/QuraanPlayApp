@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Sheikh sheikh = sheikhs.get(position);
-                    Intent intent = new Intent(MainActivity.this, Suraa.class);
+                    Intent intent = new Intent(MainActivity.this, SuraaActivity.class);
                     // get the current image item and send it as an extra to the next activity
                     intent.putExtra("Image Int", sheikh.getImageResourceId());
                     startActivity(intent);
