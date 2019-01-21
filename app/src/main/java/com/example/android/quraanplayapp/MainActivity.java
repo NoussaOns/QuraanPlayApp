@@ -1,8 +1,13 @@
 package com.example.android.quraanplayapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Gallery;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Sheikh> sheikhs = new ArrayList<>();
+        final ArrayList<Sheikh> sheikhs = new ArrayList<>();
         sheikhs.add(new Sheikh("Ahmed Al-Nafees", R.drawable.ahmed_nafees));
         sheikhs.add(new Sheikh("Fares Abbad", R.drawable.fares_abbad));
         sheikhs.add(new Sheikh("Islam Sobhi", R.drawable.islam_sobhi));
@@ -27,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.sheikh_gridview);
         SheikhAdapter sheikhAdapter = new SheikhAdapter(this,sheikhs);
         gridView.setAdapter(sheikhAdapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    Sheikh sheikh = sheikhs.get(position);
+                    Intent intent = new Intent(MainActivity.this, Suraa.class);
+                    // get the current image item and send it as an extra to the next activity
+                    intent.putExtra("Image Int", sheikh.getImageResourceId());
+                    startActivity(intent);
+            }
+        });
 
     }
 }

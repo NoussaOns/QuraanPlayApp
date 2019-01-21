@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:descendantFocusability="blocksDescendants">
+    android:orientation="vertical"
+    tools:context=".Suraa">
 
-    <GridView
+    <ImageView
+        android:id="@+id/main_image_suraa"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_image_suraa_activity_height"
+        android:src="@drawable/ahmed_nafees"
+        android:scaleType="centerCrop"/>
 
-        android:id="@+id/sheikh_gridview"
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:horizontalSpacing="@dimen/grid_spacing"
-        android:numColumns="2"
-        android:padding="@dimen/grid_spacing"
-        android:verticalSpacing="@dimen/grid_spacing">
+        android:layout_margin="@dimen/grid_spacing">
 
-    </GridView>
+    </ListView>
 
 </LinearLayout>
