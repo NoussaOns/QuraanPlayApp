@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/bg"
     android:descendantFocusability="blocksDescendants">
 
     <GridView
-
         android:id="@+id/sheikh_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
