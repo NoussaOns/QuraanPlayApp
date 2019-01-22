@@ -13,4 +13,8 @@
     <dimen name="play_arrow_dims">56dp</dimen>
     <dimen name="within_current_playing_symbols">16dp</dimen>
     <dimen name="forward_replay_dims">32dp</dimen>
+    <dimen name="current_playing_circuler_image">200dp</dimen>
+    <dimen name="between_current_playing_image_and_text">12dp</dimen>
+    <dimen name="current_playing_subtext_size">15sp</dimen>
+    <dimen name="current_playing_main_text_size">21sp</dimen>
 </resources>

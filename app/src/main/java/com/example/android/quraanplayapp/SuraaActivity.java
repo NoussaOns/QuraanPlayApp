@@ -19,11 +19,12 @@ public class SuraaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_suraa);
 
         //get the image source from the previous activity
-        int imageInt = getIntent().getIntExtra("Image Int",0);
+        final int imageInt = getIntent().getIntExtra("Image Int",0);
         ImageView imageView = findViewById(R.id.main_image_suraa);
         imageView.setImageResource(imageInt);
 
-        ArrayList<Suraa> suraas = new ArrayList<>();
+
+        final ArrayList<Suraa> suraas = new ArrayList<>();
 
         suraas.add(new Suraa("The Opening","Al-Fatihah","Makkah",1,7));
         suraas.add(new Suraa("The Cow","Al-Baqarah","Medina",2,286));
@@ -44,8 +45,15 @@ public class SuraaActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(SuraaActivity.this,CurrentPlayingActivity.class));
-
+                Suraa suraa = suraas.get(position);
+                Intent intent = new Intent(new Intent(SuraaActivity.this,CurrentPlayingActivity.class));
+                // get the current image item and send it as an extra to the next activity
+                intent.putExtra("Image Int",imageInt);
+                intent.putExtra("Suraa name",suraa.getNameArabic());
+                intent.putExtra("Suraa place", suraa.getPlace());
+                intent.putExtra("Suraa page", suraa.getPage());
+                intent.putExtra("Suraa verses", suraa.getNumberOfVerses());
+                startActivity(intent);
             }
         });
 

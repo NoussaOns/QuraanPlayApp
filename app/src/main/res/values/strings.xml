@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">QuraanPlayApp</string>
-    <string name="sheikhs">Sheikhs</string>
-    <string name="suraa">Suraa</string>
+    <string name="sheikhs">Reciters</string>
+    <string name="suraa">Chapters</string>
     <string name="current_playing">Current Playing</string>
 </resources>
