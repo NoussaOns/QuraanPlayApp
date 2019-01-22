@@ -1,18 +1,22 @@
 package com.example.android.quraanplayapp;
 
 public class Suraa {
-    private String mName, mPlace;
+    private String mNameEnglish,mNameArabic, mPlace;
     private int mPage, mNumberOfVerses;
 
-    public Suraa(String name, String place, int page, int numberOfVerses){
-        mName = name;
+    public Suraa(String nameEnglish,String nameArabic, String place, int page, int numberOfVerses){
+        mNameEnglish = nameEnglish;
         mPage = page;
         mNumberOfVerses = numberOfVerses;
         mPlace = place;
     }
 
-    public String getName() {
-        return mName;
+    public String getNameEnglish() {
+        return mNameEnglish;
+    }
+
+    public String getNameArabic() {
+        return mNameArabic;
     }
 
     public int getNumberOfVerses() {
