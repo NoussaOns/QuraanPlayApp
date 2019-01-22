@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         GridView gridView = findViewById(R.id.sheikh_gridview);
-        SheikhAdapter sheikhAdapter = new SheikhAdapter(this,sheikhs);
+        SheikhAdapter sheikhAdapter = new SheikhAdapter(this, sheikhs);
         gridView.setAdapter(sheikhAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Sheikh sheikh = sheikhs.get(position);
-                    Intent intent = new Intent(MainActivity.this, SuraaActivity.class);
-                    // get the current image item and send it as an extra to the next activity
-                    intent.putExtra("Image Int", sheikh.getImageResourceId());
-                    startActivity(intent);
+                Sheikh sheikh = sheikhs.get(position);
+                Intent intent = new Intent(MainActivity.this, SuraaActivity.class);
+                // get the current image item and send it as an extra to the next activity
+                intent.putExtra("Image Int", sheikh.getImageResourceId());
+                startActivity(intent);
             }
         });
 

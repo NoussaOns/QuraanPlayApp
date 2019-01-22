@@ -14,16 +14,16 @@ import java.util.ArrayList;
 
 public class SheikhAdapter extends ArrayAdapter<Sheikh> {
 
-    public SheikhAdapter(Context context, ArrayList<Sheikh> sheikhs){
-        super(context,0,sheikhs);
+    public SheikhAdapter(Context context, ArrayList<Sheikh> sheikhs) {
+        super(context, 0, sheikhs);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View gridItemView = convertView;
-        if (gridItemView == null){
-            gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent,false);
+        if (gridItemView == null) {
+            gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
         }
 
         Sheikh currentSheikh = getItem(position);
