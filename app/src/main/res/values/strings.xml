@@ -3,4 +3,9 @@
     <string name="sheikhs">Reciters</string>
     <string name="suraa">Chapters</string>
     <string name="current_playing">Current Playing</string>
+    <string name="page">Page: </string>
+    <string name="place">Place: </string>
+    <string name="verses">Verses: </string>
+    <string name="meccan">Meccan</string>
+    <string name="medinan">Medinan</string>
 </resources>

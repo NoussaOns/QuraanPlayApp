@@ -22,21 +22,25 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.current_playing_image);
         imageView.setImageResource(imageInt);
 
+        //get the intent
         Intent i = getIntent();
+
+        //get the appropriate information from the previous activity to populate info textViews
         String suraNameInt = i.getStringExtra("Suraa name");
         int suraPageInt = i.getIntExtra("Suraa page",0);
         String suraPlaceInt = i.getStringExtra("Suraa place");
         int suraVersesInt = i.getIntExtra("Suraa verses",0);
 
+        // Find and set the textViews with the above info
         suraaName = findViewById(R.id.suraa_name);
         suraPage = findViewById(R.id.suraa_page);
         suraPlace = findViewById(R.id.suraa_place);
         suraVerses = findViewById(R.id.suraa_verses);
 
         suraaName.setText(String.valueOf(suraNameInt));
-        suraPage.setText("Page: " + String.valueOf(suraPageInt));
-        suraPlace.setText("Place: " + String.valueOf(suraPlaceInt));
-        suraVerses.setText("Verses: " + String.valueOf(suraVersesInt));
+        suraPage.setText(getString(R.string.page) + " " + String.valueOf(suraPageInt));
+        suraPlace.setText(getString(R.string.place)+ " " + String.valueOf(suraPlaceInt));
+        suraVerses.setText(getString(R.string.verses) + " " + String.valueOf(suraVersesInt));
 
         final ImageView playArrow = findViewById(R.id.play_arrow);
 
@@ -44,6 +48,7 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         playArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //iterate between the pause and play buttons
                 isPressed = !isPressed;
                 playArrow. setImageResource(isPressed ? R.drawable.ic_pause_black_24dp : R.drawable.ic_play_arrow_black_24dp);
             }

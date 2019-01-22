@@ -26,18 +26,19 @@ public class SuraaActivity extends AppCompatActivity {
 
         final ArrayList<Suraa> suraas = new ArrayList<>();
 
-        suraas.add(new Suraa("The Opening","Al-Fatihah","Makkah",1,7));
-        suraas.add(new Suraa("The Cow","Al-Baqarah","Medina",2,286));
-        suraas.add(new Suraa("The Family of Amran","Al-'Imran","Medina",50,200));
-        suraas.add(new Suraa("The Women","An-Nisa'","Medina",77,176));
-        suraas.add(new Suraa("The Food","Al-Ma'idah","Medina",106,120));
-        suraas.add(new Suraa("The Cattle","Al-An'am","Makkah",128,165));
-        suraas.add(new Suraa("The Elevated Place","Al-A'raf","Makkah",151,206));
-        suraas.add(new Suraa("Voluntary Gifts","Al-Anfal","Medina",177,75));
-        suraas.add(new Suraa("The Immunity","At-Taubah","Medina",187,129));
-        suraas.add(new Suraa("Jonah","Yunus","Makkah",208,109));
+        suraas.add(new Suraa("The Opening","Al-Fatihah",getString(R.string.meccan),1,7));
+        suraas.add(new Suraa("The Cow","Al-Baqarah",getString(R.string.medinan),2,286));
+        suraas.add(new Suraa("The Family of Amran","Al-'Imran",getString(R.string.medinan),50,200));
+        suraas.add(new Suraa("The Women","An-Nisa'",getString(R.string.medinan),77,176));
+        suraas.add(new Suraa("The Food","Al-Ma'idah",getString(R.string.medinan),106,120));
+        suraas.add(new Suraa("The Cattle","Al-An'am",getString(R.string.meccan),128,165));
+        suraas.add(new Suraa("The Elevated Place","Al-A'raf",getString(R.string.meccan),151,206));
+        suraas.add(new Suraa("Voluntary Gifts","Al-Anfal",getString(R.string.medinan),177,75));
+        suraas.add(new Suraa("The Immunity","At-Taubah",getString(R.string.medinan),187,129));
+        suraas.add(new Suraa("Jonah","Yunus",getString(R.string.meccan),208,109));
 
 
+        //attach the list view to the custon sura adapter from the above arrayList
         ListView listView = findViewById(R.id.list_view_suraas);
         SuraaAdapter suraaAdapter = new SuraaAdapter(this,suraas);
         listView.setAdapter(suraaAdapter);
@@ -45,6 +46,7 @@ public class SuraaActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //send the clicked list item to the next activity
                 Suraa suraa = suraas.get(position);
                 Intent intent = new Intent(new Intent(SuraaActivity.this,CurrentPlayingActivity.class));
                 // get the current image item and send it as an extra to the next activity
