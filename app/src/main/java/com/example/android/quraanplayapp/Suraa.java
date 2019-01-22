@@ -6,6 +6,7 @@ public class Suraa {
 
     public Suraa(String nameEnglish,String nameArabic, String place, int page, int numberOfVerses){
         mNameEnglish = nameEnglish;
+        mNameArabic=nameArabic;
         mPage = page;
         mNumberOfVerses = numberOfVerses;
         mPlace = place;

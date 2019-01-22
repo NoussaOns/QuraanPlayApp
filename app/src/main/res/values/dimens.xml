@@ -4,4 +4,10 @@
     <dimen name="sheikh_names">28sp</dimen>
     <dimen name="main_image_suraa_activity_height">200dp</dimen>
     <dimen name="list_padding">16dp</dimen>
+    <dimen name="list_item_height">64dp</dimen>
+    <dimen name="main_text_list">16sp</dimen>
+    <dimen name="sub_text_list">12sp</dimen>
+    <dimen name="within_list_margin">12dp</dimen>
+    <dimen name="suraa_number_text_size">18sp</dimen>
+    <dimen name="suraa_number_text_view_width">32dp</dimen>
 </resources>
