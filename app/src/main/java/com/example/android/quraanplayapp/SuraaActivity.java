@@ -34,6 +34,7 @@ public class SuraaActivity extends AppCompatActivity {
         suraas.add(new Suraa("The Immunity","At-Taubah","Medina",187,129));
         suraas.add(new Suraa("Jonah","Yunus","Makkah",208,109));
 
+
         ListView listView = findViewById(R.id.list_view_suraas);
         SuraaAdapter suraaAdapter = new SuraaAdapter(this,suraas);
         listView.setAdapter(suraaAdapter);
