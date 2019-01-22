@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CurrentPlayingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@color/colorPrimary"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="@dimen/forward_replay_dims"
+            android:layout_height="@dimen/forward_replay_dims"
+            android:src="@drawable/ic_replay_10_black_24dp"/>
+        <ImageView
+            android:id="@+id/play_arrow"
+            android:layout_marginLeft="@dimen/within_current_playing_symbols"
+            android:layout_width="@dimen/play_arrow_dims"
+            android:layout_height="@dimen/play_arrow_dims"
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            />
+        <ImageView
+            android:layout_marginLeft="@dimen/within_current_playing_symbols"
+            android:layout_width="@dimen/forward_replay_dims"
+            android:layout_height="@dimen/forward_replay_dims"
+            android:src="@drawable/ic_forward_10_black_24dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
