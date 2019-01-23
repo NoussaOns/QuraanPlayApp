@@ -26,13 +26,13 @@
 
         <TextView
             android:id="@+id/suraa_name_arabic"
-            android:text="Al-Bakarah"
+            android:text="@string/bakara_default"
             style="@style/current_playing_main_text" />
 
         <TextView
             android:id="@+id/suraa_name_english"
             style="@style/current_playing_main_text"
-            android:text="Al-Bakarah" />
+            android:text="@string/bakara" />
 
         <TextView
             android:id="@+id/suraa_place"
@@ -60,6 +60,7 @@
         <ImageView
             android:layout_width="@dimen/forward_replay_dims"
             android:layout_height="@dimen/forward_replay_dims"
+            android:contentDescription="@string/play_back_10_seconds"
             android:src="@drawable/ic_replay_10_black_24dp"/>
         <ImageView
             android:id="@+id/play_arrow"
@@ -73,6 +74,7 @@
             android:layout_marginLeft="@dimen/within_current_playing_symbols"
             android:layout_width="@dimen/forward_replay_dims"
             android:layout_height="@dimen/forward_replay_dims"
+            android:contentDescription="@string/forward_10_seconds"
             android:src="@drawable/ic_forward_10_black_24dp"/>
 
 

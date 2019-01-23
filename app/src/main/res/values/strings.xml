@@ -37,4 +37,6 @@
     <string name="al_anfal_default">الأنفال</string>
     <string name="at_atauba_default">التوبة</string>
     <string name="yunus_default">يونس</string>
+    <string name="play_back_10_seconds">Play Back 10 seconds</string>
+    <string name="forward_10_seconds">Forward 10 seconds</string>
 </resources>

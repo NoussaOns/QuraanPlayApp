@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="grid_spacing">18dp</dimen>
-    <dimen name="sheikh_names">28sp</dimen>
     <dimen name="main_image_suraa_activity_height">200dp</dimen>
     <dimen name="list_padding">16dp</dimen>
     <dimen name="list_item_height">64dp</dimen>
