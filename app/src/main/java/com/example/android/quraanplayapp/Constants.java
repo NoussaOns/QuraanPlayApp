@@ -6,9 +6,9 @@ public enum Constants {
             return "SuraaData";
         }
     },
-    IMAGE_INT {
+    SHEIKH_DATA {
         public String toString() {
-            return "ImageInt";
+            return "SheikhData";
         }
     },
 

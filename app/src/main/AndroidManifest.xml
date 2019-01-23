@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/sheikhs">
+            android:label="@string/reciters">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".SuraaActivity"
-            android:label="@string/suraa" />
+            android:label="@string/chapters" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -18,11 +18,13 @@ public class SuraaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suraa);
 
-        //get the image source from the previous activity
-        final int imageInt = getIntent().getIntExtra(Constants.IMAGE_INT.toString(), 0);
-        ImageView imageView = findViewById(R.id.main_image_suraa);
-        imageView.setImageResource(imageInt);
+        final Sheikh sheikh = getIntent().getParcelableExtra(Constants.SHEIKH_DATA.toString());
+        //set the activity title
+        setTitle(getString(R.string.chapters) + ": " + sheikh.getName());
 
+        //set the activity image to the sheikh's image
+        ImageView imageView = findViewById(R.id.main_image_suraa);
+        imageView.setImageResource(sheikh.getImageResourceId());
 
         final ArrayList<Suraa> suraas = new ArrayList<>();
 
@@ -36,6 +38,7 @@ public class SuraaActivity extends AppCompatActivity {
         suraas.add(new Suraa(getString(R.string.al_anfal), getString(R.string.al_anfal_default), getString(R.string.medinan), 177, 75));
         suraas.add(new Suraa(getString(R.string.at_tauba), getString(R.string.at_atauba_default), getString(R.string.medinan), 187, 129));
         suraas.add(new Suraa(getString(R.string.yunus), getString(R.string.yunus_default), getString(R.string.meccan), 208, 109));
+        suraas.add(new Suraa(getString(R.string.hud), getString(R.string.hud_default), getString(R.string.meccan), 221, 123));
 
 
         //attach the list view to the custon sura adapter from the above arrayList
@@ -51,7 +54,7 @@ public class SuraaActivity extends AppCompatActivity {
                 Intent intent = new Intent(new Intent(SuraaActivity.this, CurrentPlayingActivity.class));
                 // get the current image and suraa data and send them as an extra to the next activity
                 intent.putExtra(Constants.SURAA_DATA.toString(), suraa);
-                intent.putExtra(Constants.IMAGE_INT.toString(), imageInt);
+                intent.putExtra(Constants.SHEIKH_DATA.toString(), sheikh);
                 startActivity(intent);
             }
         });

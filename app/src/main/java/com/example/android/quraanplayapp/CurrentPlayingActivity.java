@@ -17,12 +17,16 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_playing);
 
-        //get the image source from the previous activity
-        final int imageInt = getIntent().getIntExtra(Constants.IMAGE_INT.toString(), 0);
+        //get the sheikh data from previous activity
+        final Sheikh sheikh = getIntent().getParcelableExtra(Constants.SHEIKH_DATA.toString());
+        //set the activity image to the sheikh's image
         ImageView imageView = findViewById(R.id.current_playing_image);
-        imageView.setImageResource(imageInt);
+        imageView.setImageResource(sheikh.getImageResourceId());
 
         Suraa suraa = getIntent().getParcelableExtra(Constants.SURAA_DATA.toString());
+
+        //set activity title with the suraa's name
+        setTitle(suraa.getNameArabic());
 
         // Find and set the textViews with the above info
         suraaNameArabic = findViewById(R.id.suraa_name_arabic);

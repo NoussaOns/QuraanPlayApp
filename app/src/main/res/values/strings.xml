@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">QuraanPlayApp</string>
-    <string name="sheikhs">Reciters</string>
-    <string name="suraa">Chapters</string>
+    <string name="reciters">Reciters</string>
+    <string name="chapters">Chapters</string>
     <string name="current_playing">Current Playing</string>
     <string name="page">Page: </string>
     <string name="place">Place: </string>
@@ -39,4 +39,6 @@
     <string name="yunus_default">يونس</string>
     <string name="play_back_10_seconds">Play Back 10 seconds</string>
     <string name="forward_10_seconds">Forward 10 seconds</string>
+    <string name="hud">Hud</string>
+    <string name="hud_default">هود</string>
 </resources>
