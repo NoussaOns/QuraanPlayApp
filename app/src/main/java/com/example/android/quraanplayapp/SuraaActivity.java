@@ -26,16 +26,16 @@ public class SuraaActivity extends AppCompatActivity {
 
         final ArrayList<Suraa> suraas = new ArrayList<>();
 
-        suraas.add(new Suraa("The Opening", "Al-Fatihah", getString(R.string.meccan), 1, 7));
-        suraas.add(new Suraa("The Cow", "Al-Baqarah", getString(R.string.medinan), 2, 286));
-        suraas.add(new Suraa("The Family of Amran", "Al-'Imran", getString(R.string.medinan), 50, 200));
-        suraas.add(new Suraa("The Women", "An-Nisa'", getString(R.string.medinan), 77, 176));
-        suraas.add(new Suraa("The Food", "Al-Ma'idah", getString(R.string.medinan), 106, 120));
-        suraas.add(new Suraa("The Cattle", "Al-An'am", getString(R.string.meccan), 128, 165));
-        suraas.add(new Suraa("The Elevated Place", "Al-A'raf", getString(R.string.meccan), 151, 206));
-        suraas.add(new Suraa("Voluntary Gifts", "Al-Anfal", getString(R.string.medinan), 177, 75));
-        suraas.add(new Suraa("The Immunity", "At-Taubah", getString(R.string.medinan), 187, 129));
-        suraas.add(new Suraa("Jonah", "Yunus", getString(R.string.meccan), 208, 109));
+        suraas.add(new Suraa(getString(R.string.fatiha), getString(R.string.fatiha_default), getString(R.string.meccan), 1, 7));
+        suraas.add(new Suraa(getString(R.string.bakara), getString(R.string.bakara_default), getString(R.string.medinan), 2, 286));
+        suraas.add(new Suraa(getString(R.string.al_imran), getString(R.string.al_imran_default), getString(R.string.medinan), 50, 200));
+        suraas.add(new Suraa(getString(R.string.an_nisa), getString(R.string.an_nisa_default), getString(R.string.medinan), 77, 176));
+        suraas.add(new Suraa(getString(R.string.al_maida), getString(R.string.al_maida_default), getString(R.string.medinan), 106, 120));
+        suraas.add(new Suraa(getString(R.string.al_anam), getString(R.string.al_anam_default), getString(R.string.meccan), 128, 165));
+        suraas.add(new Suraa(getString(R.string.al_araf), getString(R.string.al_araf_default), getString(R.string.meccan), 151, 206));
+        suraas.add(new Suraa(getString(R.string.al_anfal), getString(R.string.al_anfal_default), getString(R.string.medinan), 177, 75));
+        suraas.add(new Suraa(getString(R.string.at_tauba), getString(R.string.at_atauba_default), getString(R.string.medinan), 187, 129));
+        suraas.add(new Suraa(getString(R.string.yunus), getString(R.string.yunus_default), getString(R.string.meccan), 208, 109));
 
 
         //attach the list view to the custon sura adapter from the above arrayList

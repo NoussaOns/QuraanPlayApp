@@ -19,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Sheikh> sheikhs = new ArrayList<>();
-        sheikhs.add(new Sheikh("Ahmed Al-Nafees", R.drawable.ahmed_nafees));
-        sheikhs.add(new Sheikh("Fares Abbad", R.drawable.fares_abbad));
-        sheikhs.add(new Sheikh("Islam Sobhi", R.drawable.islam_sobhi));
-        sheikhs.add(new Sheikh("Maher Al-Maikly", R.drawable.maher_almaiqly));
-        sheikhs.add(new Sheikh("Msallam Al-Mas'hali", R.drawable.msallam_mashali));
-        sheikhs.add(new Sheikh("Nasser Al-Kattami", R.drawable.naser_alqtami));
-        sheikhs.add(new Sheikh("Saad Al-Ghamdi", R.drawable.saad_alghamdy));
-        sheikhs.add(new Sheikh("Tameem Arrimi", R.drawable.tameen_reemi));
+        sheikhs.add(new Sheikh(getString(R.string.ahmed_alnafees), R.drawable.ahmed_nafees));
+        sheikhs.add(new Sheikh(getString(R.string.fares_abbad), R.drawable.fares_abbad));
+        sheikhs.add(new Sheikh(getString(R.string.islam_sobhi), R.drawable.islam_sobhi));
+        sheikhs.add(new Sheikh(getString(R.string.maher_almaikly), R.drawable.maher_almaiqly));
+        sheikhs.add(new Sheikh(getString(R.string.msallam_almashali), R.drawable.msallam_mashali));
+        sheikhs.add(new Sheikh(getString(R.string.nasser_alqattami), R.drawable.naser_alqtami));
+        sheikhs.add(new Sheikh(getString(R.string.saad_alghamdi), R.drawable.saad_alghamdy));
+        sheikhs.add(new Sheikh(getString(R.string.tameem_arrimi), R.drawable.tameen_reemi));
 
 
         GridView gridView = findViewById(R.id.sheikh_gridview);
