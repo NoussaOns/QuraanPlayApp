@@ -10,6 +10,7 @@
 
     <ImageView
         android:id="@+id/main_image_suraa"
+        android:contentDescription="@null"
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_image_suraa_activity_height"
         android:src="@drawable/ahmed_nafees"

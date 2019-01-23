@@ -8,4 +8,5 @@
     <string name="verses">Verses: </string>
     <string name="meccan">Meccan</string>
     <string name="medinan">Medinan</string>
+    <string name="content_description_pause_play_button">Pause/Play</string>
 </resources>

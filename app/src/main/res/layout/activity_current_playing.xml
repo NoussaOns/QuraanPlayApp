@@ -61,6 +61,7 @@
             android:layout_marginLeft="@dimen/within_current_playing_symbols"
             android:layout_width="@dimen/play_arrow_dims"
             android:layout_height="@dimen/play_arrow_dims"
+            android:contentDescription="@string/content_description_pause_play_button"
             android:src="@drawable/ic_play_arrow_black_24dp"
             />
         <ImageView

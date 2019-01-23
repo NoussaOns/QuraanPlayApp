@@ -22,8 +22,8 @@
         <item name="android:textSize">@dimen/sub_text_list</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/raleway_light</item>
-        <item name="android:fontFamily">@font/raleway_light</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
     </style>
 
     <style name="current_playing_main_text">
@@ -37,8 +37,8 @@
 
     <style name="current_playing_sub_text">
         <item name="android:textSize">@dimen/current_playing_subtext_size</item>
-        <item name="fontFamily">@font/raleway_light</item>
-        <item name="android:fontFamily">@font/raleway_light</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -47,7 +47,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">bottom</item>
-        <item name="android:background">#55000000</item>
+        <item name="android:background">#60000000</item>
         <item name="android:paddingBottom">@dimen/padding_bottom_top_grid_view</item>
         <item name="android:paddingTop">@dimen/padding_bottom_top_grid_view</item>
         <item name="android:paddingRight">@dimen/padding_left_right_grid_view</item>
