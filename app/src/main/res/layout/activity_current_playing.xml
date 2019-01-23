@@ -25,9 +25,14 @@
 
 
         <TextView
-            android:id="@+id/suraa_name"
+            android:id="@+id/suraa_name_arabic"
             android:text="Al-Bakarah"
             style="@style/current_playing_main_text" />
+
+        <TextView
+            android:id="@+id/suraa_name_english"
+            style="@style/current_playing_main_text"
+            android:text="Al-Bakarah" />
 
         <TextView
             android:id="@+id/suraa_place"

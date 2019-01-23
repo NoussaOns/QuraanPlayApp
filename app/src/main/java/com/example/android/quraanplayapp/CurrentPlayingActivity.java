@@ -1,6 +1,5 @@
 package com.example.android.quraanplayapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +10,7 @@ public class CurrentPlayingActivity extends AppCompatActivity {
     //declared as final because when it was in the method onClick it showed an error because of
     // toggling the boolean
     boolean isPressed = false;
-    TextView suraaName, suraPage, suraVerses, suraPlace;
+    TextView suraaNameArabic, suraaNameEnglish, suraPage, suraVerses, suraPlace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +25,14 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         Suraa suraa = getIntent().getParcelableExtra(Constants.SURAA_DATA.toString());
 
         // Find and set the textViews with the above info
-        suraaName = findViewById(R.id.suraa_name);
+        suraaNameArabic = findViewById(R.id.suraa_name_arabic);
+        suraaNameEnglish = findViewById(R.id.suraa_name_english);
         suraPage = findViewById(R.id.suraa_page);
         suraPlace = findViewById(R.id.suraa_place);
         suraVerses = findViewById(R.id.suraa_verses);
 
-        suraaName.setText(suraa.getNameArabic());
+        suraaNameArabic.setText(suraa.getNameArabic());
+        suraaNameEnglish.setText(suraa.getNameEnglish());
         suraPage.setText(getString(R.string.page) + " " + suraa.getPage());
         suraPlace.setText(getString(R.string.place) + " " + suraa.getPlace());
         suraVerses.setText(getString(R.string.verses) + " " + suraa.getNumberOfVerses());
