@@ -25,19 +25,13 @@
 
         <TextView
             android:id="@+id/arabic_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Suraa Name arabic"
-            style="@style/main_text_style"
-            app:fontFamily="@font/raleway_medium" />
+            style="@style/main_list_item_text_style" />
 
         <TextView
             android:id="@+id/english_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Suraa Name english"
-            style="@style/sub_text_style"
-            app:fontFamily="@font/raleway_light" />
+            style="@style/subtext_list_item_style" />
 
     </LinearLayout>
 

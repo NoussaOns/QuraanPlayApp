@@ -17,4 +17,6 @@
     <dimen name="between_current_playing_image_and_text">12dp</dimen>
     <dimen name="current_playing_subtext_size">15sp</dimen>
     <dimen name="current_playing_main_text_size">21sp</dimen>
+    <dimen name="padding_bottom_top_grid_view">15dp</dimen>
+    <dimen name="padding_left_right_grid_view">10dp</dimen>
 </resources>
