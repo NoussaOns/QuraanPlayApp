@@ -31,17 +31,17 @@
 
         <TextView
             android:id="@+id/suraa_place"
-            android:text="Medina"
+            android:text="@string/place"
             style="@style/current_playing_sub_text" />
 
         <TextView
             android:id="@+id/suraa_page"
-            android:text="page: 2"
+            android:text="@string/page"
             style="@style/current_playing_sub_text" />
 
         <TextView
             android:id="@+id/suraa_verses"
-            android:text="Verses: 286"
+            android:text="@string/verses"
             style="@style/current_playing_sub_text" />
 
 
