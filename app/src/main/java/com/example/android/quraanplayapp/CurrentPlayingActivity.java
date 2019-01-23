@@ -19,11 +19,11 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_current_playing);
 
         //get the image source from the previous activity
-        final int imageInt = getIntent().getIntExtra("Image Int", 0);
+        final int imageInt = getIntent().getIntExtra(Constants.IMAGE_INT.toString(), 0);
         ImageView imageView = findViewById(R.id.current_playing_image);
         imageView.setImageResource(imageInt);
 
-        Suraa suraa = getIntent().getParcelableExtra("suraaData");
+        Suraa suraa = getIntent().getParcelableExtra(Constants.SURAA_DATA.toString());
 
         // Find and set the textViews with the above info
         suraaName = findViewById(R.id.suraa_name);

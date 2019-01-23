@@ -19,7 +19,7 @@ public class SuraaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_suraa);
 
         //get the image source from the previous activity
-        final int imageInt = getIntent().getIntExtra("Image Int", 0);
+        final int imageInt = getIntent().getIntExtra(Constants.IMAGE_INT.toString(), 0);
         ImageView imageView = findViewById(R.id.main_image_suraa);
         imageView.setImageResource(imageInt);
 
@@ -50,8 +50,8 @@ public class SuraaActivity extends AppCompatActivity {
                 Suraa suraa = suraas.get(position);
                 Intent intent = new Intent(new Intent(SuraaActivity.this, CurrentPlayingActivity.class));
                 // get the current image and suraa data and send them as an extra to the next activity
-                intent.putExtra("suraaData",suraa);
-                intent.putExtra("Image Int", imageInt);
+                intent.putExtra(Constants.SURAA_DATA.toString(), suraa);
+                intent.putExtra(Constants.IMAGE_INT.toString(), imageInt);
                 startActivity(intent);
             }
         });

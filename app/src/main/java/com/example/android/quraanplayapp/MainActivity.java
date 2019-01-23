@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Sheikh sheikh = sheikhs.get(position);
                 Intent intent = new Intent(MainActivity.this, SuraaActivity.class);
                 // get the current image item and send it as an extra to the next activity
-                intent.putExtra("Image Int", sheikh.getImageResourceId());
+                intent.putExtra(Constants.IMAGE_INT.toString(), sheikh.getImageResourceId());
                 startActivity(intent);
             }
         });
