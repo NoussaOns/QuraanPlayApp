@@ -49,12 +49,9 @@ public class SuraaActivity extends AppCompatActivity {
                 //send the clicked list item to the next activity
                 Suraa suraa = suraas.get(position);
                 Intent intent = new Intent(new Intent(SuraaActivity.this, CurrentPlayingActivity.class));
-                // get the current image item and send it as an extra to the next activity
+                // get the current image and suraa data and send them as an extra to the next activity
+                intent.putExtra("suraaData",suraa);
                 intent.putExtra("Image Int", imageInt);
-                intent.putExtra("Suraa name", suraa.getNameArabic());
-                intent.putExtra("Suraa place", suraa.getPlace());
-                intent.putExtra("Suraa page", suraa.getPage());
-                intent.putExtra("Suraa verses", suraa.getNumberOfVerses());
                 startActivity(intent);
             }
         });

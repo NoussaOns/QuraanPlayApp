@@ -23,14 +23,7 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.current_playing_image);
         imageView.setImageResource(imageInt);
 
-        //get the intent
-        Intent i = getIntent();
-
-        //get the appropriate information from the previous activity to populate info textViews
-        String suraNameInt = i.getStringExtra("Suraa name");
-        int suraPageInt = i.getIntExtra("Suraa page", 0);
-        String suraPlaceInt = i.getStringExtra("Suraa place");
-        int suraVersesInt = i.getIntExtra("Suraa verses", 0);
+        Suraa suraa = getIntent().getParcelableExtra("suraaData");
 
         // Find and set the textViews with the above info
         suraaName = findViewById(R.id.suraa_name);
@@ -38,10 +31,10 @@ public class CurrentPlayingActivity extends AppCompatActivity {
         suraPlace = findViewById(R.id.suraa_place);
         suraVerses = findViewById(R.id.suraa_verses);
 
-        suraaName.setText(String.valueOf(suraNameInt));
-        suraPage.setText(getString(R.string.page) + " " + String.valueOf(suraPageInt));
-        suraPlace.setText(getString(R.string.place) + " " + String.valueOf(suraPlaceInt));
-        suraVerses.setText(getString(R.string.verses) + " " + String.valueOf(suraVersesInt));
+        suraaName.setText(suraa.getNameArabic());
+        suraPage.setText(getString(R.string.page) + " " + suraa.getPage());
+        suraPlace.setText(getString(R.string.place) + " " + suraa.getPlace());
+        suraVerses.setText(getString(R.string.verses) + " " + suraa.getNumberOfVerses());
 
         final ImageView playArrow = findViewById(R.id.play_arrow);
 
