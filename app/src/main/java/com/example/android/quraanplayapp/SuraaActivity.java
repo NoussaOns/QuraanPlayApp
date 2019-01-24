@@ -78,11 +78,4 @@ public class SuraaActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onSaveInstanceState(Bundle savedInstanceState) {
-//        super.onSaveInstanceState(savedInstanceState);
-//        //save the current state
-//        savedInstanceState.putParcelable(Constants.SHEIKH_DATA.toString(),sheikh);
-//        savedInstanceState.putParcelableArrayList(Constants.SURAAS_LIST_VIEW_DATA.toString(),suraas);
-//    }
 }
