@@ -11,11 +11,4 @@ public enum Constants {
             return "SheikhData";
         }
     },
-    SURAAS_LIST_VIEW_DATA {
-        @Override
-        public String toString() {
-            return "SuraasListViewData";
-        }
-    },
-
 }
