@@ -1,8 +1,10 @@
 package com.example.android.quraanplayapp;
 
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -14,14 +16,27 @@ import java.util.ArrayList;
 public class SuraaActivity extends AppCompatActivity {
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suraa);
 
+        //show the up navigation
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         final Sheikh sheikh = getIntent().getParcelableExtra(Constants.SHEIKH_DATA.toString());
         //set the activity title
         setTitle(getString(R.string.chapters) + ": " + sheikh.getName());
-
         //set the activity image to the sheikh's image
         ImageView imageView = findViewById(R.id.main_image_suraa);
         imageView.setImageResource(sheikh.getImageResourceId());
@@ -55,9 +70,19 @@ public class SuraaActivity extends AppCompatActivity {
                 // get the current image and suraa data and send them as an extra to the next activity
                 intent.putExtra(Constants.SURAA_DATA.toString(), suraa);
                 intent.putExtra(Constants.SHEIKH_DATA.toString(), sheikh);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+
+
             }
         });
 
     }
+
+//    @Override
+//    protected void onSaveInstanceState(Bundle savedInstanceState) {
+//        super.onSaveInstanceState(savedInstanceState);
+//        //save the current state
+//        savedInstanceState.putParcelable(Constants.SHEIKH_DATA.toString(),sheikh);
+//        savedInstanceState.putParcelableArrayList(Constants.SURAAS_LIST_VIEW_DATA.toString(),suraas);
+//    }
 }

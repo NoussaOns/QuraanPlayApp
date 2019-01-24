@@ -1,7 +1,10 @@
 package com.example.android.quraanplayapp;
 
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,9 +16,34 @@ public class CurrentPlayingActivity extends AppCompatActivity {
     TextView suraaNameArabic, suraaNameEnglish, suraPage, suraVerses, suraPlace;
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+
+                //if you need to still have the same state on the main activity,
+                Intent intent = NavUtils.getParentActivityIntent(this);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                NavUtils.navigateUpTo(this, intent);
+
+                //By specifying the parent activity name in the manifest it will always set the
+                // parent activity to be restarted. If you don't want this you have the option
+                // to provide a different functionality for the up button as below. Ideally you
+                // want to do this in a base activity so all your activities who need a similar
+                // back behavior do the same instead of placing below code in every activity.
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_playing);
+
+        //show the up navigation
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //get the sheikh data from previous activity
         final Sheikh sheikh = getIntent().getParcelableExtra(Constants.SHEIKH_DATA.toString());

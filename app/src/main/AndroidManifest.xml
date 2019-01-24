@@ -20,14 +20,16 @@
         </activity>
         <activity
             android:name=".SuraaActivity"
-            android:label="@string/chapters" />
+            android:label="@string/chapters"
+            android:parentActivityName=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".CurrentPlayingActivity"
-            android:label="@string/current_playing">
+            android:label="@string/current_playing"
+            android:parentActivityName=".SuraaActivity">
 
         </activity>
     </application>
