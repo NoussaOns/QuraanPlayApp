@@ -3,6 +3,7 @@ package com.example.android.quraanplayapp;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ public class SuraaActivity extends AppCompatActivity {
 
     @BindView(R.id.main_image_suraa) ImageView imageView;
     @BindView(R.id.list_view_suraas) ListView listView;
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -37,6 +39,7 @@ public class SuraaActivity extends AppCompatActivity {
         //show the up navigation
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ButterKnife.bind(this);
         final Sheikh sheikh = getIntent().getParcelableExtra(Constants.SHEIKH_DATA.toString());
         //set the activity title
         setTitle(getString(R.string.chapters) + ": " + sheikh.getName());
