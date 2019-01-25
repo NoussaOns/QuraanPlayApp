@@ -3,6 +3,9 @@ package com.example.android.quraanplayapp;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +30,8 @@ public class SheikhAdapter extends ArrayAdapter<Sheikh> {
 
         //check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
-            viewHolder.sheikhImage = convertView.findViewById(R.id.sheikh_image);
-            viewHolder.sheikhName = convertView.findViewById(R.id.sheikh_name);
+            viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder); //view lookup cache stored in tag
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -45,8 +46,14 @@ public class SheikhAdapter extends ArrayAdapter<Sheikh> {
         return convertView;
     }
 
-    private static class ViewHolder {
-        TextView sheikhName;
+    static class ViewHolder {
+        @BindView(R.id.sheikh_image)
         ImageView sheikhImage;
+        @BindView(R.id.sheikh_name)
+        TextView sheikhName;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }

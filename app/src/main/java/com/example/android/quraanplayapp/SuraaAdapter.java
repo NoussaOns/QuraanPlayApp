@@ -7,12 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class SuraaAdapter extends ArrayAdapter<Suraa> {
 
@@ -29,11 +28,8 @@ public class SuraaAdapter extends ArrayAdapter<Suraa> {
         Suraa currentSuraa = getItem(position);
 
         if (convertView == null) {
-            viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
-            viewHolder.arabicName = convertView.findViewById(R.id.arabic_name);
-            viewHolder.englishName = convertView.findViewById(R.id.english_name);
-            viewHolder.suraaNumber = convertView.findViewById(R.id.suraa_number);
+            viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder); //view lookup cache stored in tag
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -48,7 +44,17 @@ public class SuraaAdapter extends ArrayAdapter<Suraa> {
         return convertView;
     }
 
-    private static class ViewHolder {
-        TextView suraaNumber, englishName, arabicName;
+    //the viewHolder
+    static class ViewHolder {
+        @BindView(R.id.arabic_name)
+        TextView arabicName;
+        @BindView(R.id.english_name)
+        TextView englishName;
+        @BindView(R.id.suraa_number)
+        TextView suraaNumber;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }
