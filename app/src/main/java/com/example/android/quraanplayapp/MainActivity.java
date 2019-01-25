@@ -1,22 +1,26 @@
 package com.example.android.quraanplayapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Gallery;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.sheikh_gridview) GridView gridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
 
         final ArrayList<Sheikh> sheikhs = new ArrayList<>();
         sheikhs.add(new Sheikh(getString(R.string.ahmed_alnafees), R.drawable.ahmed_nafees));
@@ -29,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         sheikhs.add(new Sheikh(getString(R.string.tameem_arrimi), R.drawable.tameen_reemi));
 
 
-        GridView gridView = findViewById(R.id.sheikh_gridview);
         SheikhAdapter sheikhAdapter = new SheikhAdapter(this, sheikhs);
         gridView.setAdapter(sheikhAdapter);
 

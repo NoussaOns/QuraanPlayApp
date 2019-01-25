@@ -1,8 +1,9 @@
 package com.example.android.quraanplayapp;
 
 import android.content.Intent;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import butterknife.BindView;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 
 public class SuraaActivity extends AppCompatActivity {
 
+    @BindView(R.id.main_image_suraa) ImageView imageView;
+    @BindView(R.id.list_view_suraas) ListView listView;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -38,7 +41,6 @@ public class SuraaActivity extends AppCompatActivity {
         //set the activity title
         setTitle(getString(R.string.chapters) + ": " + sheikh.getName());
         //set the activity image to the sheikh's image
-        ImageView imageView = findViewById(R.id.main_image_suraa);
         imageView.setImageResource(sheikh.getImageResourceId());
 
         final ArrayList<Suraa> suraas = new ArrayList<>();
@@ -57,7 +59,6 @@ public class SuraaActivity extends AppCompatActivity {
 
 
         //attach the list view to the custon sura adapter from the above arrayList
-        ListView listView = findViewById(R.id.list_view_suraas);
         SuraaAdapter suraaAdapter = new SuraaAdapter(this, suraas);
         listView.setAdapter(suraaAdapter);
 

@@ -1,10 +1,11 @@
 package com.example.android.quraanplayapp;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageButton;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 public class SquareImageView extends AppCompatImageView {
     public SquareImageView(Context context) {
