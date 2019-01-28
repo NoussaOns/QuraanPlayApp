@@ -16,11 +16,10 @@
         android:src="@drawable/ahmed_nafees"
         android:scaleType="centerCrop"/>
 
-    <ListView
-        android:id="@+id/list_view_suraas"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_suraas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/list_padding">
-    </ListView>
+        android:layout_margin="@dimen/list_padding"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
